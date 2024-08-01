@@ -41,5 +41,19 @@ namespace ScreenSound_04.Filtros
                 Console.WriteLine("- " + musica.Nome);
             }
         }
+
+        internal static void FiltrarMusicasEmCSharp(List<Musica> musicas)
+        {
+            var musicasEmCSharp = musicas.Where(m => m.Tonalidade.Equals("C#"))
+                .Select(m => m.Nome)
+                .ToList();
+
+            Console.WriteLine("Musicas em C#:");
+
+            foreach (var item in musicasEmCSharp)
+            {
+                Console.WriteLine("- " + item);
+            }
+        }
     }
 }
